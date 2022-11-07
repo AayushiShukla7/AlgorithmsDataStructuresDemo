@@ -77,6 +77,8 @@
 
 
 // Deletion from an array
+using AlgorithmsDataStructuresConsoleApp.LinkedList;
+
 int[] intArray = new int[9];
 
 int length = 0;
@@ -100,16 +102,76 @@ for (int i = 0; i < 6; i++)
 //length--;
 
 // 6. Deleting from anywhere in the array (we want to delete #4 here)
-for (int i = 4; i < length; i++)
-{
-    intArray[i-1] = intArray[i];
-}
+//for (int i = 4; i < length; i++)
+//{
+//    intArray[i-1] = intArray[i];
+//}
 
-length--;
+//length--;
 
-for (int i = 0; i < length; i++)
-{
-    Console.WriteLine(intArray[i]);
-}
+//for (int i = 0; i < length; i++)
+//{
+//    Console.WriteLine(intArray[i]);
+//}
 
 
+// Linear Search Array
+//int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+//// Key means what value we are searching for
+//bool LinearSearch(int[] array, int key)
+//{
+//    for (int i = 0; i < array.Length; i++)
+//    {
+//        if (array[i] == key)
+//            return true;
+//    }
+//    return false;
+//}
+
+//Console.WriteLine(LinearSearch(array, 0));  //false
+//Console.WriteLine(LinearSearch(array, 4));  //true
+
+/* Linked-List [Objectified Arrays] */
+
+//Node nodeA = new Node();
+//nodeA.Data = 857;
+
+//Node nodeB = new Node();
+//nodeB.Data = 124;
+
+//Node nodeC = new Node();
+//nodeC.Data = 795;
+
+//Node nodeD = new Node();
+//nodeD.Data = 222;
+
+//Node nodeE = new Node();
+//nodeE.Data = 654;
+
+//// Set Address (Reference) value
+//nodeA.Next = nodeB;
+//nodeB.Next = nodeC;
+//nodeC.Next = nodeD;
+//nodeD.Next = nodeE;
+
+// Circular linked list
+//nodeE.Next = nodeA;
+
+// A better way of Linked List (Toolbox approach)
+LinkedList linkedList = new LinkedList();
+
+linkedList.InsertFirst(1);
+linkedList.InsertFirst(2);
+linkedList.InsertFirst(3);
+linkedList.InsertFirst(4);
+
+linkedList.DeleteFirst();
+linkedList.DeleteFirst();
+
+linkedList.InsertLast(546);
+linkedList.InsertLast(3434);
+
+linkedList.DisplayList();
+
+Console.WriteLine("Wait Point");
