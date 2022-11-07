@@ -1,4 +1,9 @@
-﻿//using AlgorithmsDataStructuresConsoleApp.ADT;
+﻿using AlgorithmsDataStructuresConsoleApp.Stack;
+
+#region Demo Code
+
+//using AlgorithmsDataStructuresConsoleApp.LinkedList;
+//using AlgorithmsDataStructuresConsoleApp.ADT;
 //using System.Collections;
 
 //Pokemon squirtle = new Pokemon();
@@ -77,18 +82,16 @@
 
 
 // Deletion from an array
-using AlgorithmsDataStructuresConsoleApp.LinkedList;
+//int[] intArray = new int[9];
 
-int[] intArray = new int[9];
+//int length = 0;
 
-int length = 0;
-
-// Populating the array with test values - for demonstration
-for (int i = 0; i < 6; i++)
-{
-    intArray[length] = i + 1;
-    length++;
-}
+//// Populating the array with test values - for demonstration
+//for (int i = 0; i < 6; i++)
+//{
+//    intArray[length] = i + 1;
+//    length++;
+//}
 
 // 4. Deleting an element from the end of the array
 //length--;
@@ -159,19 +162,41 @@ for (int i = 0; i < 6; i++)
 //nodeE.Next = nodeA;
 
 // A better way of Linked List (Toolbox approach)
-LinkedList linkedList = new LinkedList();
+//LinkedList linkedList = new LinkedList();
 
-linkedList.InsertFirst(1);
-linkedList.InsertFirst(2);
-linkedList.InsertFirst(3);
-linkedList.InsertFirst(4);
+//linkedList.InsertFirst(1);
+//linkedList.InsertFirst(2);
+//linkedList.InsertFirst(3);
+//linkedList.InsertFirst(4);
 
-linkedList.DeleteFirst();
-linkedList.DeleteFirst();
+//linkedList.DeleteFirst();
+//linkedList.DeleteFirst();
 
-linkedList.InsertLast(546);
-linkedList.InsertLast(3434);
+//linkedList.InsertLast(546);
+//linkedList.InsertLast(3434);
 
-linkedList.DisplayList();
+//linkedList.DisplayList();
 
-Console.WriteLine("Wait Point");
+//Console.WriteLine("Wait Point");
+
+#endregion
+
+/* Stack */
+
+Stack stack = new Stack(10);
+
+for(int i=0; i<3;i++)
+{
+    stack.Push("Squirtle");
+    stack.Push("Pikachu");
+    stack.Push("Charmander");
+}
+
+stack.Pop();
+stack.Peek();
+
+while(!stack.isEmpty())
+{
+    var value = stack.Pop();
+    Console.WriteLine(value);
+}
