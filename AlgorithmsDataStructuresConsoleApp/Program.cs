@@ -1,7 +1,8 @@
-﻿using AlgorithmsDataStructuresConsoleApp.Stack;
+﻿
 
 #region Demo Code
 
+//using AlgorithmsDataStructuresConsoleApp.Stack;
 //using AlgorithmsDataStructuresConsoleApp.LinkedList;
 //using AlgorithmsDataStructuresConsoleApp.ADT;
 //using System.Collections;
@@ -179,24 +180,39 @@
 
 //Console.WriteLine("Wait Point");
 
-#endregion
-
 /* Stack */
 
-Stack stack = new Stack(10);
+//Stack stack = new Stack(10);
 
-for(int i=0; i<3;i++)
-{
-    stack.Push("Squirtle");
-    stack.Push("Pikachu");
-    stack.Push("Charmander");
-}
+//for (int i = 0; i < 3; i++)
+//{
+//    stack.Push("Squirtle");
+//    stack.Push("Pikachu");
+//    stack.Push("Charmander");
+//}
 
-stack.Pop();
-stack.Peek();
+//stack.Pop();
+//stack.Peek();
 
-while(!stack.isEmpty())
-{
-    var value = stack.Pop();
-    Console.WriteLine(value);
-}
+//while (!stack.isEmpty())
+//{
+//    var value = stack.Pop();
+//    Console.WriteLine(value);
+//}
+
+#endregion
+
+/* Queue */
+using AlgorithmsDataStructuresConsoleApp.Queue;
+
+Queue queue = new Queue(10);
+
+queue.Enqueue(1);
+queue.Enqueue(2);
+queue.Enqueue(3);
+queue.Enqueue(4);
+
+queue.Dequeue();
+queue.Dequeue();
+
+Console.WriteLine(queue.Peek());
