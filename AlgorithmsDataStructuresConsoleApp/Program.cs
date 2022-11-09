@@ -215,39 +215,55 @@
 
 //Console.WriteLine($"Front of the Queue is: {queue.Peek()}");
 
-#endregion
-
 /* Binary Search */
 
-int[] intArray = { -20, -15, 2, 7, 20, 30, 54 };
+//int[] intArray = { -20, -15, 2, 7, 20, 30, 54 };
 
-Console.WriteLine(BinarySearch(intArray, 2) != -1 ? "Found the #" : "No luck!!");   //Found the #
-Console.WriteLine(BinarySearch(intArray, 3) != -1 ? "Found the #" : "No luck!!");   //No luck!!
+//Console.WriteLine(BinarySearch(intArray, 2) != -1 ? "Found the #" : "No luck!!");   //Found the #
+//Console.WriteLine(BinarySearch(intArray, 3) != -1 ? "Found the #" : "No luck!!");   //No luck!!
 
-int BinarySearch(int[] intArray, int value)
-{
-    int start = 0;
-    int end = intArray.Length;
+//int BinarySearch(int[] intArray, int value)
+//{
+//    int start = 0;
+//    int end = intArray.Length;
 
-    //start end + while less than is going criss-crossing
-    while (start < end)
-    {
-        //Put in paranthesis because add then incorrect
-        int midPoint = (start + end) / 2;
+//    //start end + while less than is going criss-crossing
+//    while (start < end)
+//    {
+//        //Put in paranthesis because add then incorrect
+//        int midPoint = (start + end) / 2;
 
-        //Search the middle of the book
-        if (intArray[midPoint] == value)
-        {
-            return midPoint;
-        }
-        else if (intArray[midPoint] < value)
-        {
-            start = midPoint + 1;
-        }
-        else
-        {
-            end = midPoint;
-        }        
-    }
-    return -1;  //Whole iteration finished and number not found means the number is not there in the array
-}
+//        //Search the middle of the book
+//        if (intArray[midPoint] == value)
+//        {
+//            return midPoint;
+//        }
+//        else if (intArray[midPoint] < value)
+//        {
+//            start = midPoint + 1;
+//        }
+//        else
+//        {
+//            end = midPoint;
+//        }        
+//    }
+//    return -1;  //Whole iteration finished and number not found means the number is not there in the array
+//}
+
+#endregion
+
+/* Tree + Binary Search Tree */
+
+using AlgorithmsDataStructuresConsoleApp.BinarySearchTree;
+
+BinarySearchTree bst = new BinarySearchTree();
+bst.Insert(7, "Squirtle");
+bst.Insert(23, "Ekans");
+bst.Insert(151, "Mew");
+bst.Insert(4, "Charmander");
+bst.Insert(1, "Bulbasaur");
+
+//Find operation in BST
+Console.WriteLine(bst.Find(151));
+
+
