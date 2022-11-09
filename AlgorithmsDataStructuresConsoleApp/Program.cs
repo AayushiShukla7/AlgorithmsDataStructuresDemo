@@ -1,5 +1,4 @@
 ﻿
-
 #region Demo Code
 
 //using AlgorithmsDataStructuresConsoleApp.Stack;
@@ -200,19 +199,55 @@
 //    Console.WriteLine(value);
 //}
 
+/* Queue */
+
+//using AlgorithmsDataStructuresConsoleApp.Queue;
+
+//Queue queue = new Queue(10);
+
+//queue.Enqueue(1);
+//queue.Enqueue(2);
+//queue.Enqueue(3);
+//queue.Enqueue(4);
+
+//queue.Dequeue();
+//queue.Dequeue();
+
+//Console.WriteLine($"Front of the Queue is: {queue.Peek()}");
+
 #endregion
 
-/* Queue */
-using AlgorithmsDataStructuresConsoleApp.Queue;
+/* Binary Search */
 
-Queue queue = new Queue(10);
+int[] intArray = { -20, -15, 2, 7, 20, 30, 54 };
 
-queue.Enqueue(1);
-queue.Enqueue(2);
-queue.Enqueue(3);
-queue.Enqueue(4);
+Console.WriteLine(BinarySearch(intArray, 2) != -1 ? "Found the #" : "No luck!!");   //Found the #
+Console.WriteLine(BinarySearch(intArray, 3) != -1 ? "Found the #" : "No luck!!");   //No luck!!
 
-queue.Dequeue();
-queue.Dequeue();
+int BinarySearch(int[] intArray, int value)
+{
+    int start = 0;
+    int end = intArray.Length;
 
-Console.WriteLine(queue.Peek());
+    //start end + while less than is going criss-crossing
+    while (start < end)
+    {
+        //Put in paranthesis because add then incorrect
+        int midPoint = (start + end) / 2;
+
+        //Search the middle of the book
+        if (intArray[midPoint] == value)
+        {
+            return midPoint;
+        }
+        else if (intArray[midPoint] < value)
+        {
+            start = midPoint + 1;
+        }
+        else
+        {
+            end = midPoint;
+        }        
+    }
+    return -1;  //Whole iteration finished and number not found means the number is not there in the array
+}
