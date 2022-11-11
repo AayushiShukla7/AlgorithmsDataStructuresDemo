@@ -12,7 +12,7 @@
 
 //string[] arr = new string[] { "pikachu", "charmander", "squirtle" };
 
-//// O(n) - Linear loop
+#region O(n) - Linear loop
 //string findSquirtle(string[] arr)
 //{
 //    int count = 0;
@@ -25,8 +25,9 @@
 //    }
 //    return "No Squirtle";
 //}
+#endregion
 
-//// O(n^2) - Quadratic - Loop inside loop - "Brute Force"
+#region O(n^2) - Quadratic - Loop inside loop - "Brute Force"
 //string printLetters(string[] arr)
 //{
 //    for (int i = 0; i < 10; i++)
@@ -38,8 +39,9 @@
 //    }
 //    return "No Squirtle";
 //}
+#endregion
 
-// Arrays
+#region Arrays
 // Array Insertions & Deletions
 
 // 1. Inserting at the end of Array [O(1)]
@@ -116,9 +118,9 @@
 //{
 //    Console.WriteLine(intArray[i]);
 //}
+#endregion
 
-
-// Linear Search Array
+#region Linear Search Array
 //int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 //// Key means what value we are searching for
@@ -134,8 +136,9 @@
 
 //Console.WriteLine(LinearSearch(array, 0));  //false
 //Console.WriteLine(LinearSearch(array, 4));  //true
+#endregion
 
-/* Linked-List [Objectified Arrays] */
+#region Linked-List [Objectified Arrays] 
 
 //Node nodeA = new Node();
 //nodeA.Data = 857;
@@ -178,8 +181,9 @@
 //linkedList.DisplayList();
 
 //Console.WriteLine("Wait Point");
+#endregion
 
-/* Stack */
+#region Stack
 
 //Stack stack = new Stack(10);
 
@@ -198,8 +202,9 @@
 //    var value = stack.Pop();
 //    Console.WriteLine(value);
 //}
+#endregion
 
-/* Queue */
+#region Queue 
 
 //using AlgorithmsDataStructuresConsoleApp.Queue;
 
@@ -214,8 +219,9 @@
 //queue.Dequeue();
 
 //Console.WriteLine($"Front of the Queue is: {queue.Peek()}");
+#endregion
 
-/* Binary Search */
+#region Binary Search
 
 //int[] intArray = { -20, -15, 2, 7, 20, 30, 54 };
 
@@ -249,8 +255,9 @@
 //    }
 //    return -1;  //Whole iteration finished and number not found means the number is not there in the array
 //}
+#endregion
 
-/* Tree + Binary Search Tree */
+#region Tree + Binary Search Tree
 
 //using AlgorithmsDataStructuresConsoleApp.BinarySearchTree;
 
@@ -266,39 +273,107 @@
 
 #endregion
 
-/* Bubble Sort */
+#region Bubble Sort 
 
-using AlgorithmsDataStructuresConsoleApp.BinarySearchTree;
+//using AlgorithmsDataStructuresConsoleApp.BinarySearchTree;
 
-int[] intArray = new int[] { 6, 5, 1, 7, 2, 4 };
+//int[] intArray = new int[] { 6, 5, 1, 7, 2, 4 };
 
-int[] value = BubbleSort(intArray);
-int joker = 0;  //Placeholder for verifying sorted result
+//int[] value = BubbleSort(intArray);
+//int joker = 0;  //Placeholder for verifying sorted result
 
-int[] BubbleSort(int[] array)
+//int[] BubbleSort(int[] array)
+//{
+//    //Variable to hold temporrary variable for the swap - Think State
+//    int temp = 0;
+
+//    //Iterates over entire loop many times
+//    for (int pointer = 0; pointer < array.Length; pointer++)
+//    {
+//        //Form the 'box' that does the comparison
+//        for (int sort = 0; sort < array.Length - 1; sort++)
+//        {
+//            //This checks to see if the left side is larger than the right
+//            if (array[sort] > array[sort + 1])
+//            {
+//                //Do the Swap
+//                //We store variable as temp so we dont overwrite it when we swap
+//                temp = array[sort + 1];
+//                //Put left variable in the right
+//                array[sort + 1] = array[sort];
+//                //Put the right variable in he left
+//                array[sort] = temp;
+//            }
+//        }
+//    }
+//    return array;
+//}
+#endregion
+
+#region Recursion
+
+////Without Recursion
+//PartyFunction();
+//PartyFunction();    //Next call is made when previous 'PartyFunction' is popped off the call stack
+//PartyFunction();
+
+//bool PartyFunction()
+//{
+//    return true;
+//}
+
+////With Recursion
+//PartyFunction();
+
+//void PartyFunction()
+//{
+//    var val = Guid.NewGuid();
+//    PartyFunction();
+//}
+
+//var val = 0;
+
+/* A sophisticated approach to demonstrate Recursion 
+ */
+//MinusByOne(5);
+
+//void MinusByOne(int n) {
+//    //Base case -> To prevent a stack overflow 
+//    if (n != 0) {
+//        MinusByOne(n - 1);
+//    }
+
+//    //All these functions are going to execute, store state, THEN they are going minus
+//    Console.WriteLine("Call: " + n);
+//}
+
+/* Recursion Example - Factorial */
+
+//An iterative factorial
+//Console.WriteLine("IterativeFactorial: " + IterativeFactorial(5));
+
+//int IterativeFactorial(int num)
+//{
+//    int factorial = 1;
+//    for (int i = 1; i <= num; i++)
+//    {
+//        factorial = factorial * i;
+//    }
+
+//    return factorial;
+//}
+
+//A recursive factorial
+Console.WriteLine("RecursiveFactorial: " + RecursiveFactorial(5));
+
+int RecursiveFactorial(int num)
 {
-    //Variable to hold temporrary variable for the swap - Think State
-    int temp = 0;
+    if (num == 0) return 1;
 
-    //Iterates over entire loop many times
-    for(int pointer = 0; pointer < array.Length; pointer++)
-    {
-        //Form the 'box' that does the comparison
-        for(int sort = 0; sort < array.Length - 1; sort++)
-        {
-            //This checks to see if the left side is larger than the right
-            if (array[sort] > array[sort+1])
-            {
-                //Do the Swap
-                //We store variable as temp so we dont overwrite it when we swap
-                temp = array[sort + 1];
-                //Put left variable in the right
-                array[sort + 1] = array[sort];
-                //Put the right variable in he left
-                array[sort] = temp;
-            }
-        }
-    }
-    return array;
+    return num * RecursiveFactorial(num - 1);
 }
+
+#endregion
+
+#endregion
 
