@@ -349,7 +349,7 @@
 
 /* Recursion Example - Factorial */
 
-//An iterative factorial
+////An iterative factorial
 //Console.WriteLine("IterativeFactorial: " + IterativeFactorial(5));
 
 //int IterativeFactorial(int num)
@@ -363,15 +363,87 @@
 //    return factorial;
 //}
 
-//A recursive factorial
-Console.WriteLine("RecursiveFactorial: " + RecursiveFactorial(5));
+////A recursive factorial
+//Console.WriteLine("RecursiveFactorial: " + RecursiveFactorial(5));
 
-int RecursiveFactorial(int num)
-{
-    if (num == 0) return 1;
+//int RecursiveFactorial(int num)
+//{
+//    if (num == 0) return 1;
 
-    return num * RecursiveFactorial(num - 1);
-}
+//    return num * RecursiveFactorial(num - 1);
+//}
+
+#endregion
+
+#region Tree Traversal + Binary Search Tree (BST)
+
+using AlgorithmsDataStructuresConsoleApp.BinarySearchTree;
+
+BinarySearchTree bst = new BinarySearchTree();
+bst.Insert(10, "");
+bst.Insert(7, "");
+bst.Insert(11, "");
+bst.Insert(6, "");
+bst.Insert(1, "");
+bst.Insert(8, "");
+bst.Insert(9, "");
+bst.Insert(20, "");
+bst.Insert(14, "");
+bst.Insert(22, "");
+
+//DFS (In Order)
+Console.WriteLine("DFS (In Order):");
+bst.PrintInOrderTraversal();
+
+/* Output 
+ DFS (In Order):
+1
+6
+7
+8
+9
+10
+11
+14
+20
+22
+ */
+
+//DFS (Pre Order)
+Console.WriteLine("\nDFS (Pre Order):");
+bst.PrintPreOrderTraversal();
+
+/* Output 
+DFS (Pre Order):
+10
+7
+6
+1
+8
+9
+11
+20
+14
+22 
+ */
+
+//DFS (Post Order)
+Console.WriteLine("\nDFS (Post Order):");
+bst.PrintPostOrderTraversal();
+
+/* Output 
+ DFS (Post Order):
+1
+6
+9
+8
+7
+14
+22
+20
+11
+10
+ */
 
 #endregion
 
