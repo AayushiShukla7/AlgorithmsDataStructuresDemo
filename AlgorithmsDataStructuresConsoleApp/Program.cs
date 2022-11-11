@@ -250,20 +250,55 @@
 //    return -1;  //Whole iteration finished and number not found means the number is not there in the array
 //}
 
+/* Tree + Binary Search Tree */
+
+//using AlgorithmsDataStructuresConsoleApp.BinarySearchTree;
+
+//BinarySearchTree bst = new BinarySearchTree();
+//bst.Insert(7, "Squirtle");
+//bst.Insert(23, "Ekans");
+//bst.Insert(151, "Mew");
+//bst.Insert(4, "Charmander");
+//bst.Insert(1, "Bulbasaur");
+
+////Find operation in BST
+//Console.WriteLine(bst.Find(151));
+
 #endregion
 
-/* Tree + Binary Search Tree */
+/* Bubble Sort */
 
 using AlgorithmsDataStructuresConsoleApp.BinarySearchTree;
 
-BinarySearchTree bst = new BinarySearchTree();
-bst.Insert(7, "Squirtle");
-bst.Insert(23, "Ekans");
-bst.Insert(151, "Mew");
-bst.Insert(4, "Charmander");
-bst.Insert(1, "Bulbasaur");
+int[] intArray = new int[] { 6, 5, 1, 7, 2, 4 };
 
-//Find operation in BST
-Console.WriteLine(bst.Find(151));
+int[] value = BubbleSort(intArray);
+int joker = 0;  //Placeholder for verifying sorted result
 
+int[] BubbleSort(int[] array)
+{
+    //Variable to hold temporrary variable for the swap - Think State
+    int temp = 0;
+
+    //Iterates over entire loop many times
+    for(int pointer = 0; pointer < array.Length; pointer++)
+    {
+        //Form the 'box' that does the comparison
+        for(int sort = 0; sort < array.Length - 1; sort++)
+        {
+            //This checks to see if the left side is larger than the right
+            if (array[sort] > array[sort+1])
+            {
+                //Do the Swap
+                //We store variable as temp so we dont overwrite it when we swap
+                temp = array[sort + 1];
+                //Put left variable in the right
+                array[sort + 1] = array[sort];
+                //Put the right variable in he left
+                array[sort] = temp;
+            }
+        }
+    }
+    return array;
+}
 
