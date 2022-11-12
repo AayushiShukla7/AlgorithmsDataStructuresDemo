@@ -377,73 +377,92 @@
 
 #region Tree Traversal + Binary Search Tree (BST)
 
-using AlgorithmsDataStructuresConsoleApp.BinarySearchTree;
+//using AlgorithmsDataStructuresConsoleApp.BinarySearchTree;
 
-BinarySearchTree bst = new BinarySearchTree();
-bst.Insert(10, "");
-bst.Insert(7, "");
-bst.Insert(11, "");
-bst.Insert(6, "");
-bst.Insert(1, "");
-bst.Insert(8, "");
-bst.Insert(9, "");
-bst.Insert(20, "");
-bst.Insert(14, "");
-bst.Insert(22, "");
+//BinarySearchTree bst = new BinarySearchTree();
+//bst.Insert(10, "");
+//bst.Insert(7, "");
+//bst.Insert(11, "");
+//bst.Insert(6, "");
+//bst.Insert(1, "");
+//bst.Insert(8, "");
+//bst.Insert(9, "");
+//bst.Insert(20, "");
+//bst.Insert(14, "");
+//bst.Insert(22, "");
 
-//DFS (In Order)
-Console.WriteLine("DFS (In Order):");
-bst.PrintInOrderTraversal();
+////DFS (In Order)
+//Console.WriteLine("DFS (In Order):");
+//bst.PrintInOrderTraversal();
 
-/* Output 
- DFS (In Order):
-1
-6
-7
-8
-9
-10
-11
-14
-20
-22
- */
+// DFS (In Order):
+//1
+//6
+//7
+//8
+//9
+//10
+//11
+//14
+//20
+//22
+// */
 
-//DFS (Pre Order)
-Console.WriteLine("\nDFS (Pre Order):");
-bst.PrintPreOrderTraversal();
+////DFS (Pre Order)
+//Console.WriteLine("\nDFS (Pre Order):");
+//bst.PrintPreOrderTraversal();
 
-/* Output 
-DFS (Pre Order):
-10
-7
-6
-1
-8
-9
-11
-20
-14
-22 
- */
+//DFS (Pre Order):
+//10
+//7
+//6
+//1
+//8
+//9
+//11
+//20
+//14
+//22 
+// */
 
-//DFS (Post Order)
-Console.WriteLine("\nDFS (Post Order):");
-bst.PrintPostOrderTraversal();
+////DFS (Post Order)
+//Console.WriteLine("\nDFS (Post Order):");
+//bst.PrintPostOrderTraversal();
 
-/* Output 
- DFS (Post Order):
-1
-6
-9
-8
-7
-14
-22
-20
-11
-10
- */
+// DFS (Post Order):
+//1
+//6
+//9
+//8
+//7
+//14
+//22
+//20
+//11
+//10
+// */
+
+#endregion
+
+#region Hash Tables
+
+//https://www.md5.cz/
+//aayushi - 157b3b6ade020d511958e0450d53b72c
+
+using AlgorithmsDataStructuresConsoleApp.HashTable;
+
+HashTable hashtable = new HashTable();
+hashtable.Set("Teddy", "123-456-7890");
+hashtable.Set("Steve", "987-654-3210");
+hashtable.Set("Jessica", "999-888-7777");
+hashtable.Set("Sarah", "666-555-4444");
+hashtable.Set("Jennifer", "333-222-1111");
+
+Console.WriteLine(hashtable.Get("Teddy"));
+Console.WriteLine(hashtable.Get("Steve"));  //Causes Hash Collision
+Console.WriteLine(hashtable.Get("Jessica"));
+Console.WriteLine(hashtable.Get("Sarah"));
+Console.WriteLine(hashtable.Get("Jennifer"));
 
 #endregion
 
